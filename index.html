@@ -28,15 +28,44 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
           <div class="navbar-nav">
-            <a class="nav-link active" aria-current="page" href="./index.html"
+            <a
+              id="homeLink"
+              class="nav-link active"
+              aria-current="page"
+              href="#"
               >Home</a
             >
-            <a class="nav-link active" href="./about.html">About</a>
+            <a id="aboutLink" class="nav-link active" href="#">About</a>
           </div>
         </div>
       </div>
     </nav>
-    <h1>Home</h1>
+    <div id="homePage">
+      <h1>Home Page</h1>
+    </div>
+    <div id="aboutPage">
+      <h1>About Page</h1>
+    </div>
+
+    <script>
+      //
+      const homePageLink = document.getElementById("homeLink");
+      const aboutPageLink = document.getElementById("aboutLink");
+      const homeDiv = document.getElementById("homePage");
+      const aboutDiv = document.getElementById("aboutPage");
+      homePageLink.addEventListener("click", function () {
+        console.log("clicked");
+        homeDiv.style.display = "block";
+        aboutDiv.style.display = "none";
+      });
+      aboutPageLink.addEventListener("click", function () {
+        console.log("clicked about");
+        homeDiv.style.display = "none";
+        aboutDiv.style.display = "block";
+      });
+      //
+    </script>
+
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa"
